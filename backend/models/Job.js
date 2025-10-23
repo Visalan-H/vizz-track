@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const jobSchema = new mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
     companyName: {
         type: String,
         required: true,
@@ -22,11 +27,10 @@ const jobSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['applied', 'interviewing', 'offered', 'rejected'],
-        default: 'applied'
+        enum: ['Applied', 'Interview', 'Offer', 'Rejected'],
+        default: 'Applied'
     }
-
-});
+}, { timestamps: true });
 
 const Job = mongoose.model('Job', jobSchema);
 
