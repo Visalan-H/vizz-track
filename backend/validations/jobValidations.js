@@ -28,7 +28,10 @@ const validateJob = (req, res, next) => {
 
     const today = new Date();
     today.setHours(23, 59, 59, 999);
-    if (appDate > today) {
+
+    appDate.setHours(0, 0, 0, 0);
+
+    if (appDate.getTime() > today.getTime()) {
         return res.status(400).json({
             message: 'Application date cannot be in the future'
         });
@@ -76,7 +79,12 @@ const validateJobUpdate = (req, res, next) => {
             });
         }
 
-        if (appDate.getTime() > Date.now()) {
+        const today = new Date();
+        today.setHours(23, 59, 59, 999);
+
+        appDate.setHours(0, 0, 0, 0);
+
+        if (appDate.getTime() > today.getTime()) {
             return res.status(400).json({
                 message: 'Application date cannot be in the future'
             });
