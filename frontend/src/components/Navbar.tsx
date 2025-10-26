@@ -11,26 +11,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo/Brand */}
-          <Link to="/home" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <h1 className="text-xl sm:text-2xl font-bold tracking-tight">VizzTrack</h1>
           </Link>
 
           {/* Navigation Links */}
           <div className="flex items-center gap-3 sm:gap-4">
-            <Link to="/home">
-              <Button 
-                variant={location.pathname === '/home' ? 'default' : 'ghost'}
-                className="cursor-pointer text-sm sm:text-base px-4 sm:px-5 h-9 sm:h-10"
-              >
-                Home
-              </Button>
-            </Link>
-            
             {!isAuthenticated ? (
               <>
                 <Link to="/login">
                   <Button 
-                    variant={location.pathname === '/login' ? 'default' : 'ghost'}
+                    variant={location.pathname === '/login' ? 'default' : 'outline'}
                     className="cursor-pointer text-sm sm:text-base px-4 sm:px-5 h-9 sm:h-10"
                   >
                     Login
@@ -49,7 +40,7 @@ export default function Navbar() {
               <>
                 <Link to="/jobs">
                   <Button 
-                    variant={location.pathname === '/jobs' ? 'default' : 'ghost'}
+                    variant={location.pathname === '/jobs' ? 'default' : 'outline'}
                     className="cursor-pointer text-sm sm:text-base px-4 sm:px-5 h-9 sm:h-10"
                   >
                     Jobs

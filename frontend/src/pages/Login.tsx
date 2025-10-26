@@ -30,7 +30,7 @@ export default function Login() {
     if (result.success) {
       const loginResult = await login(values.email, values.password);
       if (loginResult.success) {
-        navigate('/home');
+        navigate('/jobs');
       }
     }
   }

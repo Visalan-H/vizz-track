@@ -30,7 +30,7 @@ export default function SignUp() {
     if (result.success) {
       const registerResult = await register(values.email, values.password);
       if (registerResult.success) {
-        navigate('/home');
+        navigate('/jobs');
       }
     }
   }

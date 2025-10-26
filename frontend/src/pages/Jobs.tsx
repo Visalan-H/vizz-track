@@ -116,8 +116,8 @@ export default function Jobs() {
   return (
     <>
       <Navbar />
-      <div className="max-w-6xl mx-auto space-y-6 sm:space-y-6 p-5 sm:p-6 lg:p-8 pb-8">
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-5 sm:gap-6">
+      <div className="max-w-6xl mx-auto space-y-8 sm:space-y-6 p-5 sm:p-6 lg:p-8 pb-8 mt-[50px] sm:mt-0">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6 sm:gap-6">
           <div className="text-center sm:text-left space-y-2">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">Job Applications</h1>
             <p className="text-muted-foreground text-sm sm:text-base">Track your job applications and interview progress</p>
@@ -220,7 +220,7 @@ export default function Jobs() {
             </p>
           </div>
         ) : (
-          <div className="space-y-4 sm:space-y-4">
+          <div className="space-y-5 sm:space-y-4">
             {filteredJobs.map((job) => (
               <JobCard
                 key={job._id}
